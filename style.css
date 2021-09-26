@@ -14,8 +14,10 @@ img {
 .container {
     padding: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 .container .item {
+    flex: 20%;
     border: 2px solid black;
     border-radius: 10px;
     width: 30%;
@@ -113,5 +115,11 @@ td {
     }
     to {
         transform: scale(1)
+    }
+}
+
+@media(max-width: 800px) {
+    .container .item {
+        flex: 100%;
     }
 }
