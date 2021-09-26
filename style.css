@@ -91,6 +91,7 @@ td {
     margin: 5% auto 15%;
     text-align: center;
     width: 80%;
+    border: 2px dashed gray;
     border-radius: 5px;
     padding-bottom: 70px;
 }
