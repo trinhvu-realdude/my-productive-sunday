@@ -19,6 +19,21 @@ const onItemToPopUp4 = () => {
     document.getElementById('pop-up-04').style.display = 'block';
 }
 
+const buttonClose1 = () => {
+    document.getElementById('pop-up-01').style.display = 'none';
+}
+
+const buttonClose2 = () => {
+    document.getElementById('pop-up-02').style.display = 'none';
+}
+
+const buttonClose3 = () => {
+    document.getElementById('pop-up-03').style.display = 'none';
+}
+
+const buttonClose4 = () => {
+    document.getElementById('pop-up-04').style.display = 'none';
+}
 window.onclick = (event) => {
     if(event.target == new_window_1 || event.target == new_window_2 || event.target == new_window_3 || event.target == new_window_4) {
         new_window_1.style.display = 'none';
