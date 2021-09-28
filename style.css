@@ -91,6 +91,7 @@ td {
 }
 
 .pop-up .pop-up-content {
+    display: block;
     background-color: bisque;
     margin: 5% auto 15%;
     text-align: center;
