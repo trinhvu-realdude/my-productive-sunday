@@ -4,8 +4,12 @@ body {
     background-image: url('https://homedepot.scene7.com/is/image/homedepotcanada/p_1000803961.jpg?wid=1000&hei=1000&op_sharpen=1');
 }
 header {
-    text-align: center;
+    text-align: center; 
 }
+hr {
+    margin: 0;
+}
+
 /* Body */
 img {
     max-width: 100%;
@@ -29,7 +33,7 @@ img {
     background-color: bisque;
     transform: scale(1.05);
     box-shadow: 5px 5px 5px #585454;
-    transition: background 0.75s;
+    transition: background 0.75s, transform 0.75s;
 }
 .container .item .content {
     padding: 5px 10px;
