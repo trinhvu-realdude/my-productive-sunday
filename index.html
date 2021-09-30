@@ -7,199 +7,115 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto+Slab" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer="true"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <title>Exercise 6 - Your website</title>
     </head>
     <body>
-        <header>
-            <div class="heading">
-                <h1>My Favourite Topic</h1>
-            </div>
-            <hr>
-        </header>
-        <section>
-            <div class="main">
-                <div class="container">
-                    <div class="item">
-                        <div class="content">
-                            <div class="inner-content" onclick="onItemToPopUp1()">
-                                <h2>1. Piano</h2>
-                                <img src="https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-HD-Piano-Backgrounds-For-Desktop.jpg" alt="Piano">
-                                <p>
-                                    The piano is an acoustic, stringed musical instrument invented in Italy by Bartolomeo Cristofori around the year 1700, in which the strings are struck by wooden hammers that are coated with a softer material.
-                                </p>
+        <div id="app">
+            <header>
+                <div class="heading">
+                    <h1>My Favourite Topic</h1>
+                </div>
+                <hr>
+            </header>
+            <section>
+                <div class="main">
+                    <div class="container">
+                        <div class="item" v-for="item in list">
+                            <div class="content">
+                                <div class="inner-content" onclick="onItemToPopUp1()">
+                                    <h2>{{item.id}}. {{item.name}}</h2>
+                                    <img v-bind:src="item.image_link" v-bind:alt="item.name">
+                                    <p>
+                                        {{item.description}}
+                                    </p>
+                                </div>
+                                <button>
+                                    <a v-bind:href="item.wiki_link" target="_blank">Info {{item.name}} 🠖</a>
+                                </button>
                             </div>
-                            <button>
-                                <a href="https://en.wikipedia.org/wiki/Piano" target="_blank">Info Piano 🠖</a>
-                            </button>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="inner-content" onclick="onItemToPopUp2()">
-                                <h2>2. Guitar</h2>
-                                <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z3VpdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Guitar">
-                                <p>
-                                    The guitar is a musical instrument, usually made of wood, with six strings and a long neck, played with the fingers or a plectrum.
-                                </p>
-                            </div>
-                            <button>
-                                <a href="https://en.wikipedia.org/wiki/Guitar" target="_blank">Info Guitar 🠖</a>
-                            </button>
+
+                    <div class="more-details">
+                        <button id="btn-detail">
+                            <a href="#my-table">Click here ↓</a>
+                        </button>
+                    </div>
+
+                    <div class="container-table">
+                        <div id="my-table">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Type of instrument</th>
+                                    <th>Price</th>
+                                    <th>Information</th>
+                                    <th>Demo</th>
+                                </tr>
+                                <tr v-for="item in list">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>${{item.min_price}} – ${{item.max_price}}</td>
+                                    <td>
+                                        <button id="btn-info">
+                                            <a v-bind:href="item.wiki_link" target="_blank">Info {{item.name}} 🠖</a>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button id="btn-demo">
+                                            <a v-bind:href="item.demo_link" target="_blank">Demo 🎞</a>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="inner-content" onclick="onItemToPopUp3()">
-                                <h2>3. Drum</h2>
-                                <img src="https://wallpaperaccess.com/full/1262462.jpg" alt="Drum">
-                                <p>
-                                    The drum is a member of the percussion group of musical instruments. In the Hornbostel-Sachs classification system, it is a membranophone.
-                                </p>
-                            </div>
-                            <button>
-                                <a href="https://en.wikipedia.org/wiki/Drum" target="_blank">Info Drum 🠖</a>
-                            </button>
+
+
+                    <div class="container-gif">
+                        <div class="silly-gif">
+                            <img src="https://24hstore.vn/upload_images/images/2019/11/14/anh-gif-1-min.gif" alt="">
+                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1e94d557441295.59d5dfd469876.gif" alt="">
+                            <img src="https://i.gifer.com/OyGx.gif" alt="">
+                            <img src="https://i0.wp.com/john.do/wp-content/uploads/2020/08/Drums-Gif.gif" alt="">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="inner-content" onclick="onItemToPopUp4()">
-                                <h2>4. Violin</h2>
-                                <img src="https://cdn.wallpapersafari.com/92/13/gZsk4n.jpg" alt="Violin">
-                                <p>
-                                    The violin, sometimes known as a fiddle, is a wooden chordophone (string instrument) in the violin family. Most violins have a hollow wooden body.
-                                </p>
-                            </div>
-                            <button>
-                                <a href="https://en.wikipedia.org/wiki/Violin" target="_blank">Info Violin 🠖</a>
-                            </button>
+
+                    <!-- Pop up -->
+                    <div id="pop-up-01" class="pop-up">
+                        <div class="pop-up-content animate">
+                            <h1>Piano</h1>
+                            <button id="btn-close" onclick="buttonClose1()">X</button>
+                            <iframe src="https://www.youtube.com/embed/wBef8xbGQzU" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="pop-up-02" class="pop-up">
+                        <div class="pop-up-content animate">
+                            <h1>Guitar</h1>
+                            <button id="btn-close" onclick="buttonClose2()">X</button>
+                            <iframe src="https://www.youtube.com/embed/y3nTJ3R2Tdk" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="pop-up-03" class="pop-up">
+                        <div class="pop-up-content animate">
+                            <h1>Drum</h1>
+                            <button id="btn-close" onclick="buttonClose3()">X</button>
+                            <iframe src="https://www.youtube.com/embed/CzCM9YjNr6g" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div id="pop-up-04" class="pop-up">
+                        <div class="pop-up-content animate">
+                            <h1>Violin</h1>
+                            <button id="btn-close" onclick="buttonClose4()">X</button>
+                            <iframe src="https://www.youtube.com/embed/cRtUh7s3gA4" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
-
-                <div class="more-details">
-                    <button id="btn-detail">
-                        <a href="#my-table">Click here ↓</a>
-                    </button>
-                </div>
-
-                <div class="container-table">
-                    <div id="my-table">
-                        <table style="width: 100%;">
-                            <tr>
-                                <th>Rank</th>
-                                <th>Type of instrument</th>
-                                <th>Price</th>
-                                <th>Information</th>
-                                <th>Demo</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Piano</td>
-                                <td>$3000 – $6500</td>
-                                <td>
-                                    <button id="btn-info">
-                                        <a href="https://en.wikipedia.org/wiki/Piano" target="_blank">Info Piano 🠖</a>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button id="btn-demo">
-                                        <a href="https://www.youtube.com/watch?v=wBef8xbGQzU" target="_blank">Demo 🎞</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Guitar</td>
-                                <td>$200 - $600</td>
-                                <td>
-                                    <button id="btn-info">
-                                        <a href="https://en.wikipedia.org/wiki/Guitar" target="_blank">Info Guitar 🠖</a>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button id="btn-demo">
-                                        <a href="https://www.youtube.com/watch?v=y3nTJ3R2Tdk" target="_blank">Demo 🎞</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Violin</td>
-                                <td>$1450 - $25000</td>
-                                <td>
-                                    <button id="btn-info">
-                                        <a href="https://en.wikipedia.org/wiki/Violin" target="_blank">Info Violin 🠖</a>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button id="btn-demo">
-                                        <a href="https://www.youtube.com/watch?v=cRtUh7s3gA4" target="_blank">Demo 🎞</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Drum</td>
-                                <td>$300 - $1000</td>
-                                <td>
-                                    <button id="btn-info">
-                                        <a href="https://en.wikipedia.org/wiki/Drum" target="_blank">Info Drum 🠖</a>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button id="btn-demo">
-                                        <a href="https://www.youtube.com/watch?v=CzCM9YjNr6g" target="_blank">Demo 🎞</a>
-                                    </button>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-
-                <div class="container-gif">
-                    <div class="silly-gif">
-                        <img src="https://24hstore.vn/upload_images/images/2019/11/14/anh-gif-1-min.gif" alt="">
-                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1e94d557441295.59d5dfd469876.gif" alt="">
-                        <img src="https://i.gifer.com/OyGx.gif" alt="">
-                        <img src="https://i0.wp.com/john.do/wp-content/uploads/2020/08/Drums-Gif.gif" alt="">
-                    </div>
-                </div>
-
-                <!-- Pop up -->
-                <div id="pop-up-01" class="pop-up">
-                    <div class="pop-up-content animate">
-                        <h1>Piano</h1>
-                        <button id="btn-close" onclick="buttonClose1()">X</button>
-                        <iframe src="https://www.youtube.com/embed/wBef8xbGQzU" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div id="pop-up-02" class="pop-up">
-                    <div class="pop-up-content animate">
-                        <h1>Guitar</h1>
-                        <button id="btn-close" onclick="buttonClose2()">X</button>
-                        <iframe src="https://www.youtube.com/embed/y3nTJ3R2Tdk" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div id="pop-up-03" class="pop-up">
-                    <div class="pop-up-content animate">
-                        <h1>Drum</h1>
-                        <button id="btn-close" onclick="buttonClose3()">X</button>
-                        <iframe src="https://www.youtube.com/embed/CzCM9YjNr6g" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div id="pop-up-04" class="pop-up">
-                    <div class="pop-up-content animate">
-                        <h1>Violin</h1>
-                        <button id="btn-close" onclick="buttonClose4()">X</button>
-                        <iframe src="https://www.youtube.com/embed/cRtUh7s3gA4" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </body>
 </html>
