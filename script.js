@@ -76,6 +76,7 @@ window.onclick = (event) => {
 const app = new Vue({
     el: '#app',
     data: {
+        header: 'My Favourite Topic',
         list: [
             {
                 id: 1,
