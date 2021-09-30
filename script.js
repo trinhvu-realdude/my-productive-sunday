@@ -60,7 +60,7 @@ const buttonClose4 = () => {
 }
 
 window.onclick = (event) => {
-    if(event.target == new_window_1 || event.target == new_window_2 || event.target == new_window_3 || event.target == new_window_4) {
+    if (event.target == new_window_1 || event.target == new_window_2 || event.target == new_window_3 || event.target == new_window_4) {
         new_window_1.style.display = 'none';
         new_window_2.style.display = 'none';
         new_window_3.style.display = 'none';
@@ -86,9 +86,8 @@ const app = new Vue({
                 wiki_link: 'https://en.wikipedia.org/wiki/Piano',
                 demo_link: 'https://www.youtube.com/watch?v=wBef8xbGQzU',
                 min_price: 3000,
-                max_price: 6500,
-            },
-            {
+                max_price: 6500
+            }, {
                 id: 2,
                 name: 'Guitar',
                 description: 'The guitar is a musical instrument, usually made of wood, with six strings and a long neck, played with the fingers or a plectrum.',
@@ -96,9 +95,8 @@ const app = new Vue({
                 wiki_link: 'https://en.wikipedia.org/wiki/Guitar',
                 demo_link: 'https://www.youtube.com/watch?v=y3nTJ3R2Tdk',
                 min_price: 200,
-                max_price: 600,
-            },
-            {
+                max_price: 600
+            }, {
                 id: 3,
                 name: 'Drum',
                 description: 'The drum is a member of the percussion group of musical instruments. In the Hornbostel-Sachs classification system, it is a membranophone.',
@@ -106,9 +104,8 @@ const app = new Vue({
                 wiki_link: 'https://en.wikipedia.org/wiki/Drum',
                 demo_link: 'https://www.youtube.com/watch?v=CzCM9YjNr6g',
                 min_price: 300,
-                max_price: 1000,
-            },
-            {
+                max_price: 1000
+            }, {
                 id: 4,
                 name: 'Violin',
                 description: 'The violin, sometimes known as a fiddle, is a wooden chordophone (string instrument) in the violin family. Most violins have a hollow wooden body.',
@@ -116,8 +113,8 @@ const app = new Vue({
                 wiki_link: 'https://en.wikipedia.org/wiki/Violin',
                 demo_link: 'https://www.youtube.com/watch?v=cRtUh7s3gA4',
                 min_price: 1450,
-                max_price: 25000,
+                max_price: 25000
             },
         ]
     }
-})
+});
