@@ -73,6 +73,7 @@ window.onclick = (event) => {
     }
 }
 
+// Vue app
 const app = new Vue({
     el: '#app',
     data: {
@@ -85,6 +86,7 @@ const app = new Vue({
                 image_link: 'https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-HD-Piano-Backgrounds-For-Desktop.jpg',
                 wiki_link: 'https://en.wikipedia.org/wiki/Piano',
                 demo_link: 'https://www.youtube.com/watch?v=wBef8xbGQzU',
+                embed_link: 'https://www.youtube.com/embed/wBef8xbGQzU',
                 min_price: 3000,
                 max_price: 6500
             }, {
@@ -94,6 +96,7 @@ const app = new Vue({
                 image_link: 'https://images.unsplash.com/photo-1525201548942-d8732f6617a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z3VpdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
                 wiki_link: 'https://en.wikipedia.org/wiki/Guitar',
                 demo_link: 'https://www.youtube.com/watch?v=y3nTJ3R2Tdk',
+                embed_link: 'https://www.youtube.com/embed/y3nTJ3R2Tdk',
                 min_price: 200,
                 max_price: 600
             }, {
@@ -103,6 +106,7 @@ const app = new Vue({
                 image_link: 'https://wallpaperaccess.com/full/1262462.jpg',
                 wiki_link: 'https://en.wikipedia.org/wiki/Drum',
                 demo_link: 'https://www.youtube.com/watch?v=CzCM9YjNr6g',
+                embed_link: 'https://www.youtube.com/embed/CzCM9YjNr6g',
                 min_price: 300,
                 max_price: 1000
             }, {
@@ -112,6 +116,7 @@ const app = new Vue({
                 image_link: 'https://cdn.wallpapersafari.com/92/13/gZsk4n.jpg',
                 wiki_link: 'https://en.wikipedia.org/wiki/Violin',
                 demo_link: 'https://www.youtube.com/watch?v=cRtUh7s3gA4',
+                embed_link: 'https://www.youtube.com/embed/cRtUh7s3gA4',
                 min_price: 1450,
                 max_price: 25000
             },
