@@ -3,6 +3,9 @@ body {
     margin: 0;
     background-image: url('https://homedepot.scene7.com/is/image/homedepotcanada/p_1000803961.jpg?wid=1000&hei=1000&op_sharpen=1');
 }
+html {
+    scroll-behavior: smooth;
+}
 header {
     text-align: center; 
 }
