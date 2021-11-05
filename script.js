@@ -1,41 +1,3 @@
-let iframes = document.getElementsByTagName('iframe');
-
-const buttonClose1 = () => {
-    document.getElementById('pop-up-01').style.display = 'none';
-    if (iframes != null) {
-        for (let i = 0; i < iframes.length; i++) {
-            iframes[i].src = iframes[i].src;
-        }
-    }
-}
-
-const buttonClose2 = () => {
-    document.getElementById('pop-up-02').style.display = 'none';
-    if (iframes != null) {
-        for (let i = 0; i < iframes.length; i++) {
-            iframes[i].src = iframes[i].src;
-        }
-    }
-}
-
-const buttonClose3 = () => {
-    document.getElementById('pop-up-03').style.display = 'none';
-    if (iframes != null) {
-        for (let i = 0; i < iframes.length; i++) {
-            iframes[i].src = iframes[i].src;
-        }
-    }
-}
-
-const buttonClose4 = () => {
-    document.getElementById('pop-up-04').style.display = 'none';
-    if (iframes != null) {
-        for (let i = 0; i < iframes.length; i++) {
-            iframes[i].src = iframes[i].src;
-        }
-    }
-}
-
 // Vue app
 const app = new Vue({
     el: '#app',
@@ -86,7 +48,7 @@ const app = new Vue({
         ]
     },
     methods: {
-        windowPopUp: function (id) {
+        windowPopUp(id) {
             for (let i = 0; i < this.list.length; i++) {
                 if (id === this.list[i].id) {
                     document.getElementById(`pop-up-0${id}`).style.display = 'block';
@@ -94,8 +56,15 @@ const app = new Vue({
             }
         },
         buttonClose: function (id) {
+            let iframes = document.getElementsByTagName('iframe');
             for (let i = 0; i < this.list.length; i++) {
                 if (id === this.list[i].id) {
+                    document.getElementById(`pop-up-0${id}`).style.display = 'none';
+                    if (iframes != null) {
+                        for (let i = 0; i < iframes.length; i++) {
+                            iframes[i].src = iframes[i].src;
+                        }
+                    }
                     console.log(id);
                 }
             }
